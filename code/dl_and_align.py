@@ -1,7 +1,8 @@
-import mmsdk
-from mmsdk import mmdatasdk
+#import mmsdk
+#from mmsdk import mmdatasdk
 import time
 import numpy
+import sys 
 
 def myavg(intervals,features):
 	final=numpy.average(features,axis=0)
@@ -11,7 +12,8 @@ def myavg(intervals,features):
 
 def align():
 
-	socialiq_no_align=mmdatasdk.mmdataset(mmdatasdk.socialiq.highlevel,"socialiq")
+	#socialiq_no_align=mmdatasdk.mmdataset(mmdatasdk.socialiq.highlevel,"socialiq")
+	socialiq_no_align=sys.arg[1]
 	#don't need these guys
 	del socialiq_no_align["QA_BERT_lastlayer_binarychoice"]
 	del socialiq_no_align["SOCIAL-IQ_QA_BERT_MULTIPLE_CHOICE"]
