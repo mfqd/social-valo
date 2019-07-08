@@ -1,0 +1,20 @@
+- step:
+    name: wget-me-up
+    image: python:3.6
+    command:
+      - pip install keras tensorflow numpy
+      - apt-get install wget
+      - wget --version
+
+- step:
+    name: unzip
+    image: python:3.6
+    command: unzip /valohai/inputs/datazip -d /valohai/outputs
+    inputs:
+      - name : datazip
+        default: datum://016bd2e2-8d15-6481-6b46-1550958c8d0b
+
+
+
+
+  
